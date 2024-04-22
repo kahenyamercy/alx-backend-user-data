@@ -3,7 +3,8 @@
 import re
 
 
-def filter_datum(fields, redaction, message, separator):
+def filter_datum(fields: list[str], redaction: str,
+                 message: str, separator: str) -> str:
     """Obfuscate specified fields in the log message."""
     return re.sub(f'({separator.join(fields)})[^{separator}]+',
                   f'{redaction}', message)
