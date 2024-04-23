@@ -49,7 +49,7 @@ class BasicAuth(Auth):
         user_list = User.search({'email': user_email})
 
         # If user list is empty, return None
-        if not user_list:
+        if len(user_list) == 0:
             return None
 
         # Check each user in the list for valid password
